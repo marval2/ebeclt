@@ -1,7 +1,9 @@
 /* lg */ 
 @media (min-width: 1200px) {
 
+.navbar-brand{
 
+}
 }
 
 /* md */
@@ -65,6 +67,12 @@
     width: 215px;
     height: 60px;
   }
+
+    .navbar-brand img{
+        top: -3px;
+    }
+
+
 
   .navbar-right {
     padding: 0;
