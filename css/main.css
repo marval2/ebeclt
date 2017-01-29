@@ -102,7 +102,7 @@ h2 {
 }
 
 .navbar-brand {
-  background-color: #1B7B98;
+  background-color: #354250;
   height: 90px;
   margin-bottom: 20px;
   position: relative;
@@ -114,7 +114,7 @@ h2 {
 }
 
 .navbar-right {
-  background-color: #1B7B98;
+  background-color: #354250;
   padding:0 95px 0 0;
   opacity: .9
 }
@@ -132,12 +132,12 @@ h2 {
 .navbar-right li a:focus,  
 .navbar-right .active a {
   background-color: #fff;
-  color: #16728f
+  color: #354250
 }
 
 
 .fixed-menu {
-  background-color: #1B7B98;
+  background-color: #354250;
   position: fixed;
   top: 0;
 }
@@ -162,8 +162,9 @@ h2 {
 }
 
 .fixed-menu .navbar-brand img {
-  height:60px;
-  top: 0;
+  height:54px;
+  top: 2px;
+  padding-left: 4px;
 }
 
 .fixed-menu .header-top {
@@ -271,7 +272,7 @@ h2 {
 }
 
 #explore h2 {
-  font-size: 42px;
+  font-size: 84px;
   text-transform: uppercase;
   text-align: center;
 }
@@ -392,12 +393,13 @@ h2 {
 **************************/
 #contacts-best {
   background-color: #33888F;
+
   // TODO: best backgroundas
-  background-image: url("../images/performar-bg.jpg");
-  background-position: 50% 0;
-  background-size: contain;
+  //background-image: url("../images/performar-bg.jpg");
+  //background-position: 50% 0;
+  //background-size: contain;
   position: relative;
-  background-repeat: no-repeat;
+  //background-repeat: no-repeat;
 }
 
 .guitar {
@@ -485,6 +487,10 @@ h2 {
   padding-bottom: 15px;
 }
 
+#jbec .h2-padding {
+  margin-top: 60px;
+}
+
 .guitar2 {
   top: 0;
   width: 50%;
@@ -505,10 +511,12 @@ h2 {
 
 
 #about h2 {
+  margin-top: 90px;
   margin-bottom: 23px;
 }
 
 #tasks h2 {
+  margin-top: 90px;
   margin-bottom: 23px;
 }
 
@@ -541,87 +549,23 @@ h2 {
   background-color: #126d55
 }
 
-
-
-/*************************
-******Twitter CSS****
-**************************/
-
-#twitter {
-  background-color: #ecedef;
-  background-image: url("../images/twitter-bg.jpg");
-  background-position: center bottom;
-  background-size: cover;
-  background-repeat:no-repeat;
-  position: relative;
-  padding: 95px 0 90px;
-  overflow: hidden;
-}
-
-.twit {
-  position: absolute;
-  left: 0;
-  top:-42%;
-}
-
-#twitter-feed .item {
-  text-align: center;
-}
-
-#twitter-feed .item img {
-  display: inline-block;
-  width: 78px;
-  height: 78px;
-  border-radius: 50%;
-  background-color: #c5c8ce;
-  padding: 5px;
-  margin-bottom: 30px;
-}
-
-#twitter-feed .item a, 
-#twitter-feed .item p { 
-  font-size: 24px;
-  font-weight: 300;
-  font-family: 'Yanone Kaffeesatz','sans-serif';
-}
-
-#twitter-feed .item p {
-  color: #3D3D3D;
-}
-
-#twitter-feed .item a {
-  color:#00c3ff;
-}
-
-.twitter-control-left, 
-.twitter-control-right {
-  position: absolute;
-  color: #00c3ff;
-  top: 59%;
-  font-size: 24px
-}
-
-.twitter-control-left {
-  left: 0;
-}
-
-.twitter-control-right {
-  right:0;
-} 
-
-
-
 /*************************
 ******Sponsor CSS****
 **************************/
 
 #sponsor {
-  background-color: #1881a2;
-  background-image: url("../images/sponsor-bg.jpg");
+  background-color: #b48b1d;
+  //background-image: url("../images/sponsor-bg.jpg");
   background-position:50% 0;
   background-size: cover;
   background-repeat:no-repeat;
   position: relative;
+  padding-bottom: 65px;
+}
+
+#sponsor .sponsor-logo{
+  width: 300px;
+  height: auto;
 }
 
 #sponsor-jbec {
@@ -804,13 +748,13 @@ h2 {
 
 #footer {
   background-color: #212121;
-  background-image: url("../images/footer-bg.jpg");
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  /background-image: url("../images/footer-bg.jpg");
+  //background-position: center bottom;
+  //background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
   font-size: 20px;
-  padding: 35px 0;
+  padding: 25px 0;
 }
 
 #footer a {
