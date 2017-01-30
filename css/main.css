@@ -563,7 +563,7 @@ h2 {
   padding-bottom: 65px;
 }
 
-#sponsor .sponsor-logo{
+#sponsor .sponsor{
   width: 300px;
   height: auto;
 }
@@ -712,7 +712,22 @@ h2 {
   font-size: 18px;
 }
 
+#register .form-control {
+  border-color: #ae750d;
+  box-shadow:none;
+  outline: 0 none;
+  border-radius: 0;
+  color: #797979;
+  font-size: 18px;
+}
+
+
+
 #contact-section .form-control:focus {
+  border-color: #ae750d;
+}
+
+#register .form-control:focus {
   border-color: #ae750d;
 }
 
@@ -720,7 +735,16 @@ h2 {
   height: 44px;
 }
 
+#register input {
+  height: 44px;
+}
+
 #contact-section textarea {
+  height: 90px;
+  resize:none;
+}
+
+#register textarea {
   height: 90px;
   resize:none;
 }
@@ -735,7 +759,22 @@ h2 {
   margin-top: 10px
 }
 
+#register .btn-primary {
+  background-color: #373737;
+  color: #f7ab24;
+  border: none;
+  font-size: 24px;
+  padding: 6px 42px;
+  margin-bottom: 110px;
+  margin-top: 10px
+}
+
 #contact-section .btn-primary:hover {
+  background-color: #212020;
+  color: #fff
+}
+
+#register .btn-primary:hover {
   background-color: #212020;
   color: #fff
 }
