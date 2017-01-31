@@ -1,0 +1,10 @@
+.list-align {
+    width: 100%;
+    text-align: center;
+}
+.list-align > div {
+    width: 20%;
+    display: inline-block;
+    zoom: 1;
+    margin: 1vw;
+}

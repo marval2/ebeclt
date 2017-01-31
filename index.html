@@ -23,6 +23,10 @@
     <!--<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
 
     <script type="text/javascript" src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/alignCenter.css">
+
 </head><!--/head-->
 
 <body>
@@ -270,37 +274,63 @@
         </div>
     </section><!--/#sponsor-->
 
-    <!--<section id="register">-->
-        <!--<div class="contact-section">-->
-            <!--&lt;!&ndash;<div class="ear-piece">&ndash;&gt;-->
-            <!--&lt;!&ndash;<img class="img-responsive" src="images/ear-piece.png" alt="">&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--<div class="container">-->
+    <section id="register">
+        <div class="contact-section">
+            <div class="ear-piece">
+            <img class="img-responsive" src="images/ear-piece.png" alt="">
+            </div>
+            <div class="container">
 
-                <!--<h2>Registracija</h2>-->
-
-                <!--&lt;!&ndash;Use later for registration form&ndash;&gt;-->
-                <!--&lt;!&ndash;<div id="contact-section">&ndash;&gt;-->
-                <!--&lt;!&ndash;<h3>Send a message</h3>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="status alert alert-success" style="display: none"></div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
-                <!--&lt;!&ndash;<input type="text" name="name" class="form-control" required="required" placeholder="Name">&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
-                <!--&lt;!&ndash;<input type="email" name="email" class="form-control" required="required" placeholder="Email ID">&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
-                <!--&lt;!&ndash;<textarea name="message" id="message" required="required" class="form-control" rows="4" placeholder="Enter your message"></textarea>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
-                <!--&lt;!&ndash;<button type="submit" class="btn btn-primary pull-right">Send</button>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;</form>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
+                <h2>Registracija</h2>
+                <!-- Vytenis added registration START -->
+                <div id="registration">
+                    <form id="registrationForm" action="#">
+                        <div class="list-align">
+                            <div>
+                                <input type="radio" id="teamDesign" name="teamType" required>
+                                <label class="registrationTeam" id="designTeam" for="teamDesign" >
+                                    <img alt="Komanda" src="images/registration/group.png"/>
+                                    <h3 >Team design</h3>
+                                </label>
+                            </div>
+                            <div>
+                            <input type="radio" id="caseStudy" name="teamType">
+                            <label for="caseStudy" id="caseStudyTeam" class="registrationTeam">
+                                <img alt="Komanda" src="images/registration/group.png"/>
+                                <h3 >Case study</h3>
+                            </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="caseStudyAlone" name="teamType">
+                                <label id="caseStudySingle" class="registrationTeam" for="caseStudyAlone">
+                                    <img alt="Komanda" src="images/registration/one_person.png"/>
+                                    <h3>Case study</h3>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="teamNameDiv" ><input placeholder="Komandos pavadinimas" id="teamName" required></div>
+                        <div class="list-align" id="registrationFormList"></div>
+                        <input type="submit" class="push_button blue" id="registrationSubmit" value="Registruotis" />
+                    </form>
+                </div>
+                <div class="form-style entry" id="applicantID_C">
+                    <input type="text" id="applicantID_C_name" name="applicantID_C_name" placeholder="Vardas Pavardė" required>
+                    <label for="applicantID_C_bird" name="applicantID_C_bird">Gimimo data:
+                        <input type="date" id="applicantID_C_bird" name="applicantID_C_bird" placeholder="Gimimo data" required>
+                    </label>
+                    <label for="applicantID_C_food" class="checkbox" >Vegetaras:<input id="applicantID_C_food" name="applicantID_C__food" type="checkbox"></label>
+                        <input id="applicantID_C_email" name="applicantID_C__email" type="email" placeholder="El. Paštas" required>
+                    <label for="applicantID_C_phone">Telefonas: +370 <input type="number" id="applicantID_C_phone" name="applicantID_C_phone" min="0000000" max="9999999"></label>
+                        <input type="text" placeholder="Fakultetas" id="applicantID_C_faculty" name="applicantID_C_faculty" required>
+                    <input type="text" placeholder="Studijų pakopa" id="applicantID_C_study_cycle" name="applicantID_C_study_cycle" required>
+                    <input type="text" placeholder="Kursas" id="applicantID_C_course" name="applicantID_C_course" required>
+                    <input type="text" placeholder="Akademinė grupė" id="applicantID_C_academic_group" name="applicantID_C_academic_group" required>
+                    <label for="applicantID_C_cv">Pridėti CV</label><input id="applicantID_C_cv" name="applicantID_C_cv" type="file" required>
+                </div>
+                <!-- Vytenis added registration END -->
+            </div>
+        </div>
+    </section>
 
 
 
@@ -379,14 +409,15 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/gmaps.js"></script>
+    <!--<script type="text/javascript" src="js/gmaps.js"></script>-->
     <script type="text/javascript" src="js/smoothscroll.js"></script>
     <script type="text/javascript" src="js/jquery.parallax.js"></script>
     <script type="text/javascript" src="js/coundown-timer.js"></script>
     <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
     <script type="text/javascript" src="js/jquery.nav.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+<!--    <script type="text/javascript" src="js/app.js"></script>-->
+    <script type="text/javascript" src="js/registration.js"></script>
 </div>
 </body>
 </html>

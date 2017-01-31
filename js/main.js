@@ -67,7 +67,7 @@ jQuery(function($) {'use strict',
 
 });
 
-
+/*
 // Google Map Customization
 (function(){
 
@@ -144,7 +144,7 @@ jQuery(function($) {'use strict',
 	});
 
 	map.setStyle("map_style");
-}());
+}());*/
 
 
 
