@@ -26,10 +26,19 @@
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/alignCenter.css">
+    <link rel="stylesheet" href="css/balloon.css">
 
 </head><!--/head-->
 
 <body>
+<div id="balloonBackground" class="hidden">
+    <div id="toCenter">
+        <div id="balloon">
+            <h3 id="balloonText">Informacija</h3>
+            <button id="balloonButton">Mygtukas</button>
+        </div>
+    </div>
+</div>
 <div id="app">
     <header id="header" role="banner">
         <div class="main-nav">
@@ -280,7 +289,6 @@
             <img class="img-responsive" src="images/ear-piece.png" alt="">
             </div>
             <div class="container">
-
                 <h2>Registracija</h2>
                 <!-- Vytenis added registration START -->
                 <div id="registration">
@@ -320,7 +328,7 @@
                     </label>
                     <label for="applicantID_C_food" class="checkbox" >Vegetaras:<input id="applicantID_C_food" name="applicantID_C__food" type="checkbox"></label>
                         <input id="applicantID_C_email" name="applicantID_C__email" type="email" placeholder="El. Paštas" required>
-                    <label for="applicantID_C_phone">Telefonas: +370 <input type="number" id="applicantID_C_phone" name="applicantID_C_phone" min="0000000" max="9999999"></label>
+                    <label for="applicantID_C_phone">Telefonas: +370 <input type="number" id="applicantID_C_phone" name="applicantID_C_phone" min="0000000" max="9999999" ></label>
                         <input type="text" placeholder="Fakultetas" id="applicantID_C_faculty" name="applicantID_C_faculty" required>
                     <input type="text" placeholder="Studijų pakopa" id="applicantID_C_study_cycle" name="applicantID_C_study_cycle" required>
                     <input type="text" placeholder="Kursas" id="applicantID_C_course" name="applicantID_C_course" required>
@@ -331,10 +339,6 @@
             </div>
         </div>
     </section>
-
-
-
-
     <!--TODO: suvienodint nuotraukų dydžius-->
     <section id="contacts-best">
         <div class="container">

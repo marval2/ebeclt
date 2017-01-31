@@ -36,4 +36,44 @@
     });
 
     renderForms(4);
+
+
+    var form = document.forms.namedItem("registrationForm");
+    form.addEventListener('submit', function(ev) {
+
+        var oOutput = "",
+            oData = new FormData(form);
+
+        oData.append("CustomField", "This is some extra data");
+
+        var oReq = new XMLHttpRequest();
+        oReq.open("POST", "stash.php?namas", true);
+        oReq.onreadystatechange = function () {
+            if(oReq.readyState == XMLHttpRequest.DONE){
+                showBallon(oReq.responseText)
+            }
+        };
+        oReq.onload = function(oEvent) {
+            if (oReq.status == 200) {
+                oOutput = "Užregistruota!";
+            } else {
+                oOutput= "Neužregistruota " + oReq.status + " occurred when trying to upload your file";
+            }
+        };
+
+        oReq.send(oData);
+        ev.preventDefault();
+    }, false);
+
+
+    function showBallon(text) {
+        document.getElementById("balloonText").innerHTML = text;
+        document.getElementById("balloonBackground").classList.remove("hidden");
+    }
+
+
+    document.getElementById("balloonButton").addEventListener("click", function () {
+        document.getElementById("balloonBackground").classList.add("hidden");
+    })
+
 })();
