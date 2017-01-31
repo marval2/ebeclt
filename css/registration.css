@@ -1,6 +1,7 @@
 #registration{
     color: #000;
     height: 100%;
+    display: block;
 }
 
 #registration input, #teamNameDiv{

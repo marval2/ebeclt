@@ -40,14 +40,13 @@
 
     var form = document.forms.namedItem("registrationForm");
     form.addEventListener('submit', function(ev) {
-
         var oOutput = "",
             oData = new FormData(form);
 
         oData.append("CustomField", "This is some extra data");
 
         var oReq = new XMLHttpRequest();
-        oReq.open("POST", "stash.php?namas", true);
+        oReq.open("POST", "backend/index.php", true);
         oReq.onreadystatechange = function () {
             if(oReq.readyState == XMLHttpRequest.DONE){
                 showBallon(oReq.responseText)
