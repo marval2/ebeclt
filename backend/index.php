@@ -32,6 +32,13 @@
                 $applicantsNumber = 1;
             }else{
                 $applicantsNumber = 4;
+                if(!empty($_POST["teamName"])){
+                    if($db->isTeamInDB($_POST["teamName"])){
+                        throw new Exception("Jau tokia komanda įregistruota");
+                    }
+                }else{
+                    throw new Exception("Įrašykite komandos pavadinimą");
+                }
             }
         }else{
             throw new Exception('Pasirinkite komandą');
@@ -41,7 +48,7 @@
             if (!empty($_POST["applicant" . $i . "_name"])) {
                 $name = $_POST["applicant" . $i . "_name"];
                 if($valid->isName($name)){
-                    $fields["full_name"] = $name;
+                    $fields[$i]["full_name"] = $name;
                 }else {
                     throw new Exception('Blogai aprašytas vardas');
                 }
@@ -52,7 +59,7 @@
             if (!empty($_POST["applicant" . $i . "_bird"])) {
                 $date = $_POST["applicant" . $i . "_bird"];
                 if($valid->isValidDate($date)){
-                    $fields["birthday"] = $date;
+                    $fields[$i]["birthday"] = $date;
                 }else {
                     throw new Exception('Blogai nurodyta gimimo data');
                 }
@@ -60,12 +67,12 @@
                 throw new Exception('Įrašykite datą');
             }
 
-            $fields["vegetarian"] = isset($_POST["applicant" . $i . "__food"])? 1 : 0;
+            $fields[$i]["vegetarian"] = isset($_POST["applicant" . $i . "__food"])? 1 : 0;
 
             if (!empty($_POST["applicant" . $i . "__email"])) {
                 $email = $_POST["applicant" . $i . "__email"];
                 if($valid->isEmail($email)){
-                    $fields["email"] = $email;
+                    $fields[$i]["email"] = $email;
                 }else{
                     throw new Exception('Blogai nurodytas el. paštas');
                 }
@@ -80,7 +87,7 @@
             if (!empty($_POST["applicant" . $i . "_phone"])) {
                 $phone = $_POST["applicant" . $i . "_phone"];
                 if($valid->isPhoneNumber($phone)){
-                    $fields["phone_number"] = $phone;
+                    $fields[$i]["phone_number"] = $phone;
                 }else{
                     throw new Exception('Blogai nurodytas telefono numeris');
                 }
@@ -90,22 +97,22 @@
 
             if (!empty($_POST["applicant" . $i . "_faculty"])  ) {
                 $faculty = $_POST["applicant" . $i . "_faculty"];
-                $fields["faculty"] = $_POST["applicant" . $i . "_faculty"];
+                $fields[$i]["faculty"] = $_POST["applicant" . $i . "_faculty"];
             }else{
                 throw new Exception('Nurodykite savo fakultetą');
             }
             if (!empty($_POST["applicant" . $i . "_study_cycle"])) {
-                $fields["study_cycle"] = $_POST["applicant" . $i . "_study_cycle"];
+                $fields[$i]["study_cycle"] = $_POST["applicant" . $i . "_study_cycle"];
             }else{
                 throw new Exception('Nurodykite studijų pakopą');
             }
             if (!empty($_POST["applicant" . $i . "_course"])) {
-                $fields["course"] = $_POST["applicant" . $i . "_course"];
+                $fields[$i]["course"] = $_POST["applicant" . $i . "_course"];
             }else{
                 throw new Exception('Nurodykite studijų kursą');
             }
             if (!empty($_POST["applicant" . $i . "_academic_group"])) {
-                $fields["academic_group"] = $_POST["applicant" . $i . "_academic_group"];
+                $fields[$i]["academic_group"] = $_POST["applicant" . $i . "_academic_group"];
             }else{
                 throw new Exception('Nurodykite akademinę grupę');
             }
@@ -113,12 +120,12 @@
                 if ($_FILES["applicant". $i ."_cv"]['error']!=0){
                     throw new Exception('Blogas failas. Įkelkite kitą');
                 }else{
-                    $cv = $_FILES["applicant". $i ."_cv"];
+                    $cv[$i] = $_FILES["applicant". $i ."_cv"];
                 }
-                if(!$valid->isGoodFileFormat($cv)){
+                if(!$valid->isGoodFileFormat($cv[$i])){
                     throw new Exception('Blogas failo formatas');
                 }
-                if (!$valid->isFileNotToBig($cv)){
+                if (!$valid->isFileNotToBig($cv[$i])){
                     throw new Exception('Failas per didelis (įkelkite mažesnį nei 1MB)');
                 }
             }else{
@@ -131,13 +138,23 @@
     }
 
     try{
-        $fileType = pathinfo($cv['name'],PATHINFO_EXTENSION);
-        $target = 'cv/'.$email.".".$fileType;
-        $fields["cv_url"] = $target;
-        move_uploaded_file( $cv["tmp_name"], $target);
-        $db->addAplicant($fields);
-    }catch (Exception $e){
 
+        if(!empty($_POST["teamName"])) {
+            $teamId = $db->addTeam($_POST["teamName"],$_POST["teamType"]);
+        }else{
+            $teamId = 0;
+        }
+        for ($i = 0; $i< $applicantsNumber; $i++) {
+            $fields[$i]["team_name_ID"] = $teamId;
+            $fileType = pathinfo($cv[$i]['name'],PATHINFO_EXTENSION);
+            $target = 'cv/'.$email.".".$fileType;
+            $fields["cv_url"] = $target;
+            move_uploaded_file( $cv[$i]["tmp_name"], $target);
+            $db->addAplicant($fields[$i]);
+        }
+    }catch (Exception $e){
+        echo $e->getMessage();
+        exit;
     }
 
     echo "Registracijos pabaiga".$applicantsNumber;

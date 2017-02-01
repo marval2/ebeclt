@@ -25,7 +25,7 @@ class Validator
     }
 
     function isPhoneNumber($number){
-        if(preg_match('/^\d{6}$/',$number)){
+        if(preg_match('/^\d{8}$/',$number)){
             return true;
         }else{
             return false;

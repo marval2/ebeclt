@@ -52,12 +52,37 @@ class EbecDB
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":email", $email );
         $stmt->execute();
-        if($stmt->fetchColumn()>0){
+        if($stmt->rowCount()>0){
             return true;
         }else{
             return false;
         }
+    }
 
+    /**
+     * @param $teamName Komandos pavadinimas
+     * @param $teamType Komandos tipas
+     * @return int įrašytos komandos id
+     */
+    function addTeam($teamName, $teamType){
+        $sql = "INSERT INTO `team`(`name`,`teamType`) VALUES (:team_name,:teamType)";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":team_name",  $teamName );
+        $stmt->bindParam(":teamType",  $teamType );
+        $stmt->execute();
+        return (int)$this->db->lastInsertId();
+    }
+
+    function isTeamInDB($teamName){
+        $sql = "SELECT `name` FROM team WHERE `name` = :team_name LIMIT 1";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":team_name", $teamName );
+        $stmt->execute();
+        if($stmt->rowCount()>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
