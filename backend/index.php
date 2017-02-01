@@ -6,6 +6,7 @@
  */
     include_once ("Validator.class.php");
     include_once ("EbecDB.class.php");
+    $configs = include_once ("_config.php");
     ini_set('post_max_size', '10M');
     ini_set('upload_max_filesize', '10M');
     $error = array();
@@ -24,8 +25,11 @@
         "cv_url"
     );*/
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
     $valid = new Validator();
-    $db = new EbecDB();
+    $db = new EbecDB($configs["username"],$configs["pass"],$configs["database"]);
     try{
         $applicantsNumber = 0;
         if ($_SERVER['CONTENT_LENGTH'] > 8380000) {

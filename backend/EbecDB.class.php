@@ -9,9 +9,9 @@
 class EbecDB
 {
     private $db;
-    function __construct()
+    function __construct($user,$pass,$database)
     {
-        $this->db = new PDO('mysql:host=localhost;dbname=localhostDB;charset=utf8mb4', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;dbname='.$database.';charset=utf8mb4', $user, $pass);
     }
 
     /**
@@ -34,7 +34,6 @@ class EbecDB
             $stmt->bindParam(":academic_group",$fields["academic_group"]  );
             $stmt->bindParam(":cv_url" ,       $fields["cv_url" ]         );
             $stmt->execute();
-            echo "veikia";
         } catch(PDOException $ex) {
             echo $ex->getMessage();
             exit();
