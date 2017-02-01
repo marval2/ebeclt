@@ -26,9 +26,6 @@
         "cv_url"
     );*/
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
     $valid = new Validator();
     $db = new EbecDB($configs["username"],$configs["pass"],$configs["database"]);
     try{
@@ -168,5 +165,6 @@ ini_set('display_errors', 1);
         exit;
     }
 
-    echo "Registracija sėkminga!";
+    echo "Registracija sėkminga! Kitas žingsnis sumokėti depozitą.
+     Dėl depozitų perdavimo Studentų miestelyje kreiptis tel.: 862360723 (Emilija) dėl depozitų perdavimo centre kreiptis: 868662414 (Urtė)";
     exit();
