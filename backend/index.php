@@ -142,9 +142,9 @@
     }
 
     try{
-        if(!empty($_POST["teamName"])) {
-            $teamId = $db->addTeam($_POST["teamName"],$_POST["teamType"]);
-        }else{
+        if (!empty($_POST["teamName"])) {
+            $teamId = $db->addTeam($_POST["teamName"], $_POST["teamType"]);
+        } else {
             $teamId = 0;
         }
         for ($i = 0; $i< $applicantsNumber; $i++) {

@@ -50,16 +50,12 @@ class EbecDB
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":email", $email );
         $stmt->execute();
-        if($stmt->rowCount()>0){
-            return true;
-        }else{
-            return false;
-        }
+        return $stmt->rowCount() > 0 ? true : false;
     }
 
     /**
-     * @param $teamName Komandos pavadinimas
-     * @param $teamType Komandos tipas
+     * @param $teamName EbecDB komandos pavadinimas
+     * @param $teamType EbecDB komandos tipas
      * @return int įrašytos komandos id
      */
     function addTeam($teamName, $teamType){
