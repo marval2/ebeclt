@@ -7,9 +7,11 @@
     include_once ("Validator.class.php");
     include_once ("EbecDB.class.php");
     include_once ("temporay.php");
+    ini_set('post_max_size', '20M');
+    ini_set('upload_max_filesize', '20M');
     $error = array();
 
-    $fields = array(
+    /*$fields = array(
         "team_name_ID",
         "full_name",
         "email",
@@ -21,12 +23,15 @@
         "course",
         "academic_group",
         "cv_url"
-    );
+    );*/
 
     $valid = new Validator();
     $db = new EbecDB();
     try{
         $applicantsNumber = 0;
+        if ($_SERVER['CONTENT_LENGTH'] > 8380000) {
+            throw new Exception("Per dideli priedai");
+        }
         if(!empty($_POST["teamType"])){
             if($_POST["teamType"] == "caseStudyAlone"){
                 $applicantsNumber = 1;
@@ -70,9 +75,9 @@
             $fields[$i]["vegetarian"] = isset($_POST["applicant" . $i . "__food"])? 1 : 0;
 
             if (!empty($_POST["applicant" . $i . "__email"])) {
-                $email = $_POST["applicant" . $i . "__email"];
-                if($valid->isEmail($email)){
-                    $fields[$i]["email"] = $email;
+                $email[$i] = $_POST["applicant" . $i . "__email"];
+                if($valid->isEmail($email[$i])){
+                    $fields[$i]["email"] = $email[$i];
                 }else{
                     throw new Exception('Blogai nurodytas el. paštas');
                 }
@@ -80,7 +85,7 @@
                 throw new Exception('Nurodykite el. pašto adresą');
             }
 
-            if($db->isEmailInDB($email)){
+            if($db->isEmailInDB($email[$i])){
                 throw new Exception('Su tuo pačiu el. paštu jau yra registruotas asmuo');
             }
 
@@ -147,7 +152,7 @@
         for ($i = 0; $i< $applicantsNumber; $i++) {
             $fields[$i]["team_name_ID"] = $teamId;
             $fileType = pathinfo($cv[$i]['name'],PATHINFO_EXTENSION);
-            $target = 'cv/'.$email.".".$fileType;
+            $target = 'cv/'.$email[$i].".".$fileType;
             $fields[$i]["cv_url"] = $target;
             move_uploaded_file( $cv[$i]["tmp_name"], $target);
             $db->addAplicant($fields[$i]);

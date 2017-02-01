@@ -25,7 +25,6 @@ function addAplicant($fields){
         $stmt->bindParam(":academic_group",$fields["academic_group"]  );
         $stmt->bindParam(":cv_url" ,       $fields["cv_url" ]         );
         $stmt->execute();
-        echo "veikia";
     } catch(PDOException $ex) {
         echo $ex->getMessage();
         exit();
