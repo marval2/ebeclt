@@ -6,9 +6,8 @@
  */
     include_once ("Validator.class.php");
     include_once ("EbecDB.class.php");
-    include_once ("temporay.php");
-    ini_set('post_max_size', '20M');
-    ini_set('upload_max_filesize', '20M');
+    ini_set('post_max_size', '10M');
+    ini_set('upload_max_filesize', '10M');
     $error = array();
 
     /*$fields = array(
@@ -143,7 +142,6 @@
     }
 
     try{
-
         if(!empty($_POST["teamName"])) {
             $teamId = $db->addTeam($_POST["teamName"],$_POST["teamType"]);
         }else{
@@ -162,4 +160,5 @@
         exit;
     }
 
-    echo "Registracijos pabaiga".$applicantsNumber;
+    echo "Registracija sėkminga!";
+    exit();

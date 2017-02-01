@@ -20,8 +20,6 @@ class EbecDB
     function addAplicant($fields){
         $sql = "INSERT INTO `applicant` (`team_name_ID`, `full_name`, `email`, `vegetarian`, `birthday`, `phone_number`, `faculty`, `study_cycle`, `course`, `academic_group`, `cv_url`) 
                 VALUES ( :team_name_ID, :full_name, :email, :vegetarian, :birthday, :phone_number, :faculty, :study_cycle, :course, :academic_group, :cv_url)";
-        print_r($fields);
-
         try {
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(":team_name_ID",  $fields["team_name_ID"]    );
