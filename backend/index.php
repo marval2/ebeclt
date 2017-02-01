@@ -6,6 +6,7 @@
  */
     include_once ("Validator.class.php");
     include_once ("EbecDB.class.php");
+    include_once ("Mail.class.php");
     $configs = include_once ("_config.php");
     ini_set('post_max_size', '10M');
     ini_set('upload_max_filesize', '10M');
@@ -151,6 +152,8 @@ ini_set('display_errors', 1);
         } else {
             $teamId = 0;
         }
+        $mail = new Mail();
+
         for ($i = 0; $i< $applicantsNumber; $i++) {
             $fields[$i]["team_name_ID"] = $teamId;
             $fileType = pathinfo($cv[$i]['name'],PATHINFO_EXTENSION);
@@ -158,6 +161,7 @@ ini_set('display_errors', 1);
             $fields[$i]["cv_url"] = $target;
             move_uploaded_file( $cv[$i]["tmp_name"], $target);
             $db->addAplicant($fields[$i]);
+            $mail->send($email[$i],"ebeckaunas@gmail.com");
         }
     }catch (Exception $e){
         echo $e->getMessage();
