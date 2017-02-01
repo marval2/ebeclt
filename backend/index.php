@@ -148,7 +148,7 @@
             $fields[$i]["team_name_ID"] = $teamId;
             $fileType = pathinfo($cv[$i]['name'],PATHINFO_EXTENSION);
             $target = 'cv/'.$email.".".$fileType;
-            $fields["cv_url"] = $target;
+            $fields[$i]["cv_url"] = $target;
             move_uploaded_file( $cv[$i]["tmp_name"], $target);
             $db->addAplicant($fields[$i]);
         }
