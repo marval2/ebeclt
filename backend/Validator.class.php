@@ -41,16 +41,16 @@ class Validator
     }
 
     function isGoodFileFormat($fileName){
-        $ext = pathinfo($fileName, PATHINFO_EXTENSION);
-        if(
+        $ext = pathinfo($fileName['name'], PATHINFO_EXTENSION);
+        return (
             $ext == "doc"  ||
             $ext == "docx" ||
             $ext == "pdf"  ||
             $ext == "otd"
-        ){
-            return true;
-        }else{
-            return false;
-        }
+        )? true:false;
+    }
+
+    function isFileNotToBig($fileName,$size = 1000000){
+        return ($fileName["size"] < $size)? true:false;
     }
 }

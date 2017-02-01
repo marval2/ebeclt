@@ -9,7 +9,7 @@
 function addAplicant($fields){
     $sql = "INSERT INTO `applicant` (`team_name_ID`, `full_name`, `email`, `vegetarian`, `birthday`, `phone_number`, `faculty`, `study_cycle`, `course`, `academic_group`, `cv_url`, `approved`) 
                 VALUES ( :team_name_ID, :full_name, :email, :vegetarian, :birthday, :phone_number, :faculty, :study_cycle, :course, :academic_group, :cv_url, :approved)";
-
+    print_r($fields);
     $db = new PDO('mysql:host=localhost;dbname=localhostDB;charset=utf8mb4', 'root', '');
     try {
         $stmt = $db->prepare($sql);
@@ -24,14 +24,10 @@ function addAplicant($fields){
         $stmt->bindParam(":course",        $fields["course"]          );
         $stmt->bindParam(":academic_group",$fields["academic_group"]  );
         $stmt->bindParam(":cv_url" ,       $fields["cv_url" ]         );
-
+        $stmt->execute();
         echo "veikia";
     } catch(PDOException $ex) {
-        echo "An Error occured!"; //user friendly message
-        some_logging_function($ex->getMessage());
+        echo $ex->getMessage();
+        exit();
     }
-}
-
-function renderErrors($errors){
-    return "Klaidos";
 }
