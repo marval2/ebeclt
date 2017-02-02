@@ -6,7 +6,7 @@ table{
     margin:  0 auto;
     border: 1px solid #000;
 }
-tr:first-child{
+tr:first-child,tr:first-child:hover{
     background-color: #b48b1d;
     font-weight: 800;
 }
@@ -34,4 +34,41 @@ tr:nth-child(2n):hover{
 
 body{
     background-color: #ffff99;
+}
+
+#logout, #loginForm input[type=submit]{
+    background-color: #b48b1d;
+    border: 0px;
+    padding: 3px 5px;
+}
+#logout:active, #loginForm input,input[type=submit]:active{
+    -webkit-box-shadow: inset 2px 3px 5px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 2px 3px 5px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 2px 3px 5px 1px rgba(0,0,0,0.5);
+}
+
+#logout, #loginForm input[type=submit]{
+    -webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);
+}
+
+
+
+form#loginForm{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#loginForm input{
+    line-height: 2vh;
+    background-color: #ffff99;
+}
+
+#loginForm input[type=submit]{
+    margin-top: 10px;
 }
