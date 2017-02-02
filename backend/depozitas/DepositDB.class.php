@@ -23,7 +23,6 @@ class DeposidDB
     function updateAplicant($deposit, $id){
         $sql = "UPDATE applicant SET approved = :approved WHERE id = :id";
         try {
-            print $deposit;
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(":approved",$deposit);
             $stmt->bindParam(":id", $id );

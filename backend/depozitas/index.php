@@ -37,20 +37,12 @@ if(empty($_SESSION["prisijunges"])){
     ";
 }else{
     $content = "";
-
     $config = include_once ("../_config.php");
-
     $db = new DeposidDB($config->username,$config->pass,$config->database);
     if(isset($_POST["id"]) && $_POST["id"] > 0){
-        $config = include_once ("../_config.php");
         $checked = $_POST["approved"] == "true" ? 5 : 0;
         $rez = $db->updateAplicant($checked,$_POST["id"]);
-        print "Rez:".$rez;
-        if($rez === true){
-            echo "Statusas pakeistas";
-        }else{
-            echo "Klaida:".$rez;
-        }
+        $content = $rez === true ? "Statusas pakeistas" : "Klaida:" . $rez;
         exit();
     }else {
         $content = renderApplicantList($db->applicantsList());
