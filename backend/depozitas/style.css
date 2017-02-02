@@ -1,0 +1,37 @@
+*{
+    font-family: Arial;
+    font-size: 12px;
+}
+table{
+    margin:  0 auto;
+    border: 1px solid #000;
+}
+tr:first-child{
+    background-color: #b48b1d;
+    font-weight: 800;
+}
+
+input{
+    opacity: 1;
+    background-color: #373737;
+}
+
+td{
+    padding: 2px 4px;
+}
+
+tr:nth-child(2n){
+    background-color:  #ccff66;
+}
+
+tr:hover{
+    background-color: #cccc77;
+}
+
+tr:nth-child(2n):hover{
+    background-color:  #aacc44;
+}
+
+body{
+    background-color: #ffff99;
+}
