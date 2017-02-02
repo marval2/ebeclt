@@ -27,6 +27,10 @@
         "cv_url"
     );*/
 
+    function array_dup($ar){
+        return array_unique(array_diff_assoc($ar,array_unique($ar)));
+    }
+
     $valid = new Validator();
     $db = new EbecDB($configs->username,$configs->pass,$configs->database);
     try{
@@ -139,6 +143,12 @@
                 throw new Exception('Pridėkite failą');
             }
         }
+        if($applicantsNumber == 4){
+            $dubEmail = array($fields[0]["email"],$fields[1]["email"],$fields[2]["email"],$fields[3]["email"]);
+            if(!empty(array_dup($dubEmail))){
+                throw new Exception('Kartojasi el. paštas');
+            }
+        }
     }catch (Exception $e){
         echo $e->getMessage();
         exit;
@@ -151,7 +161,6 @@
             $teamId = 0;
         }
         $mail = new Mail();
-
         for ($i = 0; $i< $applicantsNumber; $i++) {
             $fields[$i]["team_name_ID"] = $teamId;
             $fileType = pathinfo($cv[$i]['name'],PATHINFO_EXTENSION);
