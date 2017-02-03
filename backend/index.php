@@ -13,6 +13,8 @@
 
     $error = array();
 
+    //TODO: Išsiaiškinti kaip padaryti testą su phpStorm
+
     /*$fields = array(
         "team_name_ID",
         "full_name",
