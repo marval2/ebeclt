@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>EBEC Kaunas</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">-->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">-->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">-->
+    <!--<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/alignCenter.css">
+    <link rel="stylesheet" href="css/balloon.css">
+
+
+</head><!--/head-->
+
+<body>
+<div id="balloonBackground" class="hidden">
+    <div id="toCenter">
+        <div id="balloon">
+            <h3 id="balloonText">Informacija</h3>
+            <button id="balloonButton">Supratau</button>
+        </div>
+    </div>
+</div>
+<div id="app">
+    <header id="header" role="banner">
+        <div class="main-nav">
+            <div class="container">
+                <div class="header-top">
+                    <div class="pull-right social-icons">
+                        <a target="_blank" href="https://www.facebook.com/events/243504846093224/"><i class="fa fa-facebook"></i></a>
+                        <!--<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>-->
+                        <a target="_blank" href="https://www.youtube.com/user/LBGKaunas/videos"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive img-logo" src="images/ebec-logo1.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="scroll active"><a href="#home">Pradžia</a></li>
+                            <!--<li class="scroll"><a href="#explore"></a></li>-->
+
+                            <li class="scroll"><a href="#about">Apie renginį</a></li>
+                            <li class="scroll"><a href="#tasks">Užduotys</a></li>
+                            <li class="scroll"><a href="#jbec">JBEC</a></li>
+
+                            <li class="scroll"><a href="#sponsor">Rėmėjai</a></li>
+                            <li class="scroll"><a href="#register">Registracija</a></li>
+
+                            <li class="scroll"><a href="#contacts-best">Kontaktai</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <section id="home">
+        <div id="main-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
+                    <!--<div class="carousel-caption">-->
+                        <!--<h2>Registruokis į ebec </h2>-->
+                        <!--<h4>registracija baigiasi vasario 24d.</h4>-->
+                        <!--<a href="#register">registracija <i class="fa fa-angle-right"></i></a>-->
+                    <!--</div>-->
+                </div>
+                <!--<div class="item">-->
+                <!--<img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">-->
+                <!--<div class="carousel-caption">-->
+                <!--<h2>register for our next event </h2>-->
+                <!--<h4>full event package only @$199</h4>-->
+                <!--<a href="#register">GRAB YOUR TICKETS <i class="fa fa-angle-right"></i></a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="item">-->
+                <!--<img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">-->
+                <!--<div class="carousel-caption">-->
+                <!--<h2>register for our next event </h2>-->
+                <!--<h4>full event package only @$199</h4>-->
+                <!--<a href="#register" >GRAB YOUR TICKETS <i class="fa fa-angle-right"></i></a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </section>
+    <!--/#home-->
+
+    <!--reikia ar ne?-->
+    <section id="explore">
+        <div class="container">
+            <div class="row">
+                <!--<div class="watch">-->
+                <!--<img class="img-responsive" src="images/watch.png" alt="">-->
+                <!--</div>-->
+                <div class="col-md-6  col-sm-5">
+                    <h2 class="clock-header">ebec prasidės po</h2>
+                </div>
+                <div class="col-sm-7 col-md-6">
+                    <ul id="countdown">
+                        <li>
+                            <span class="days time-font">00</span>
+                            <p>dienų </p>
+                        </li>
+                        <li>
+                            <span class="hours time-font">00</span>
+                            <p class="">valandų </p>
+                        </li>
+                        <li>
+                            <span class="minutes time-font">00</span>
+                            <p class="">minučių</p>
+                        </li>
+                        <li>
+                            <span class="seconds time-font">00</span>
+                            <p class="">sekundžių</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="cart">-->
+                <!--<a href="#"><i class="fa fa-users"></i> <span>Registruokis</span></a>-->
+            <!--</div>-->
+        </div>
+    </section><!--/#explore-->
+
+
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Apie</h2>
+                    <p>EBEC Kaunas – kasmet organizuojamų tarptautinių inžinerinių varžybų EBEC (European BEST Engineering Competition) pirmasis etapas, kuris Lietuvoje rengiamas jau 12-tą kartą. Varžybų metu, dvi skirtingose kategorijose laimėjusios komandos, atstovaus KTU ir Lietuvą regioniniame etape. Laimėjus regioninį etapą komanda keliauja į finalą ir rungiasi su geriausiais Europos techniškųjų universitetų studentais.
+                        Renginys organizuojamas siekiant, kad studentai rastų sprendimus į pateiktas įmonių užduotis, būtų supažindinti su dabartinėmis pasaulinėmis problemomis ir įsitrauktų ieškoti sprendimų įvairiose situacijose, pasitelkiant techninius ir socialinius gebėjimus. Taip pat skatinama ieškoti naujų idėjų, kurias būtų galima pritaikyti ir kasdieniniame gyvenime.
+                        Varžybos susideda iš dviejų kategorijų: atvejo tyrimo (Case Study) ir inžinerinės užduoties (Team Design). Kiekvienoje kategorijoje dalyvaujančias komandas sudaro 4 žmonės. Registruoti galima komandą arba vieną asmenį, kuris paskui bus priskirtas į komandą.
+                    </p>
+                    <a href="#tasks" class="btn btn-primary">Daugiau apie užduotis <i class="fa fa-angle-right"></i></a>
+                </div>
+                <div class="col-sm-4">
+                    <img class="img-responsive" src="images/cogs-icon.png" alt="guitar">
+                </div>
+            </div>
+        </div>
+    </section><!--/#about-->
+
+    <section id="tasks">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="task-image">
+                        <img class="img-responsive" src="images/cogs-icon.png" alt="guitar">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="">
+                        <h2>Inžinerinė užduotis (Team design)</h2>
+                        <p>Šioje varžybų dalyje, per ribotą laiką ir naudojantis tik gautomis medžiagomis, dalyvių komanda atlieka inžinerinę – konstravimo užduotį. Užduoties rezultatas yra prietaisas, atliekantis tam tikrus veiksmus ar pats naudojamas kaip įrankis atitinkamiems veiksmams atlikti. Inžinerinės užduoties metu, renginio partneriai pristato „Team Design“ užduotį, kurią reikia atlikti per 2 dienas.
+                            Kiekvienais metais pateikiamos vis įdomesnės ir vis daugiau kūrybiškumo reikalaujančios užduotys. Varžybų dalyviams yra tekę sukonstruoti skraidantį kamuolį, kuris pats save įsimestų į krepšinio lanką. 2013 m. seni spausdintuvai virto vėjo jėgainėmis.  2014-aisiais studentams teko susidoroti su itin išradinga užduotimi - pasverti važiuojanti automobilį, kuriai įvykdyti studentai naudojo ir konkurso organizatorių pateiktas medžiagas, ir plastikinę tarą, balionus bei kitus po ranka pasitaikiusius daiktus. 2015 m. studentai konstravo chronometrus, kuo tiksliau skaičiuojančius laiką, o 2016-aisiais iš muzikos grotuvo teko pagaminti kuo išmanesnę spyną ir raktą šiai spynai atrakinti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="">
+                        <h2>Atvejo analizė (Case study)</h2>
+                        <p>Ši varžybų dalis apima techninės ir vadybinės problemos analizę bei sprendimo suradimą. Atvejo tyrimo metu, dalyviams tenka spręsti problemines užduotis, pateikti situacijos analizę ar net modelius, tad studentams tenka pasitelkti tiek kūrybiškumą, tiek inžinerines žinias. Įmonėms pristačius šio tipo užduotį komandos turi 1 dieną intensyvaus darbo ją nagrinėjant ir sekančią dieną prezentacijos forma pateikia jos sprendimą, pastebėjimus, pasiūlymus ir atitinkamas su problema susijusias išvadas.</p>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="task-image">
+                        <img class="img-responsive" src="images/gears-0.png" alt="guitar">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="task-image">
+                        <img class="img-responsive" src="images/cogs-icon.png" alt="guitar">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="">
+                        <h2>Apie užduotis</h2>
+                        <p>Užduotys būna kuo įvairiausios ir priverčia gerai pasukti galvą, kad būtų rastas kuo geresnis sprendimas. 2014 m. „NFQ“ atstovai studentams pateikė problemą, kuria buvo siekiama gauti praktiškai įgyvendinamų idėjų korupcijos lygiui sumažinti. Tuo tarpu „LitGRID“ dalyviams metė kitokio pobūdžio iššūkį - sumodeliuoti kuo geresnę oro liniją. Įmonės „MARS Lietuva“ atstovai suorganizavo vizitą į pačią įmonę. Jos metu studentai turėjo galimybę susipažinti su įmonėje vykstančiais gamybiniais procesais. O užduotis buvo susijusi su gamybine linija. Inžinerinių varžybų dalyviams teko spręsti dilemą, kaip sumažinti kačių ėdalo gabaliukų prilipimą prie dozavimo kolbų sienelių. 2015 m. komandos iš naujo išradinėjo dviratį, tiesė elektros linijas bei automatizavo rankiniu būdu atliekamą gamybos liniją. 2016 m. Case Study užduotys pristatytos trijų įmonių. Viena jų „Aedilis“, kurios pateikta užduotis - sukurti gamyklos efektyvumo vertinimo sistemą. Sprendinyje turėjo atsispindėti Industry 4.0 tendencijos ir technologijų taikymas vykdant gamybos resursų apskaitą, naudojant įvairius sensorius, skaitiklius ir kt. Antroji Case Study kategorijoje dalyvavusi įmonė - „TeleSoftas“. Jų užduotis buvo rasti sprendimą, kaip pagerinti mobilaus ryšio kokybę nedidelių kaimų teritorijose su mažiausiu investavimu į techninę įrangą. Ir trečioji šios kategorijos užduotis, kurią teikė įmonė „MARS Lietuva“, buvo automatizuoti vežimėlių su produktu suvežimą į sterilizatorių.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#about-->
+    <section id="jbec">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="sponsor-jbec" class="row h2-padding" >
+                        <h2 id="jbecTitle">JuniorBEC RĖMĖJAI</h2>
+                        <div class="item active">
+                            <ul>
+                                <li><a href="https://www.kartlandas.lt/"><img class="img-responsive" src="images/sponsor/kartlandas_baltas.png" alt=""></a></li>
+                                <li><a href="http://www.ka-ringas.lt/"><img class="img-responsive" src="images/sponsor/ka-ringas.png" alt=""></a></li>
+                                <li><a href="http://infinityroom.lt/"><img class="img-responsive" src="images/sponsor/logo_L.png" alt=""></a></li>
+                                <!--<li><a href="#"><img class="img-responsive" src="images/sponsor/sponsor1.png" alt=""></a></li>-->
+                                <li><a href="http://inspire.solideducation.lt/"><img class="img-responsive" src="images/sponsor/solid.png" alt=""></a></li>
+                                <!--<li><a href="#"><img class="img-responsive" src="images/sponsor/sponsor5.png" alt=""></a></li>-->
+                                <!--<li><a href="#"><img class="img-responsive" src="images/sponsor/sponsor6.png" alt=""></a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 h2-padding">
+                    <div class="">
+                        <h2>apie jbec</h2>
+                        <p>JuniorBEC’17 moksleivių inžinerinės varžybos vyks vasario 15 d. Kauno technologijos universiteto (KTU) Statybos ir architektūros fakultete (Studentų g. 48, Kaunas). Dalyvauti gali 9-12 (1-4 gimnazijos) klasių mokiniai. Esant dideliam norui, galima registruoti ir jaunesnių klasių moksleivių komandas. Į renginį kviečiamas atvykti ir lydintis mokytojas.
+                            Šie metai skiriasi nuo senesnių. Moksleiviai užduotį sužinos tik atvykę į universitetą. Dalyvavimas nereikalauja išankstinio pasiruošimo. Užduotį atlieka iš 4 moksleivių sudaryta komanda, jos metu reikia sumaketuoti daiktą, naudojant suteiktas priemones.  Atliktą darbą vertina iš universiteto ir įmonės atstovų sudaryta komisija. Geriausiai pasirodžiusios komandos bus apdovanotos rėmėjų įsteigtais prizais, o nugalėtojai gaus teisę dalyvauti EBEC’17 studentų inžinerinėse varžybose.
+                        </p>
+                        <a target="_blank" href="https://www.facebook.com/events/726151974202314/?__mref=message_bubble"  class="btn btn-primary">Daugiau informacijos <i class="fa fa-facebook-square"></i></a>
+                        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScjm4KaTegMml6_F1w8AlGaf1oFp6QOZjJ-jPqO9UHG5tckxg/viewform?c=0&w=1" class="btn btn-primary">Registracija į JBEC <i class="fa fa-users"></i></a>
+                    </div>
+                </div>
+            </div>
+            <h2>Istorija</h2>
+            <div class="container">
+                <p>Iki 2010 m. inžinerinėse varžybose dalyvaudavo tik studentai, tačiau siekiant glaudesnio bendradarbiavimo tarp moksleivių, būsimų studentų bei universiteto, moksleiviams buvo suteikta teisė tarpusavyje varžytis to paties pobūdžio inžinerinėse varžybose. Moksleiviams užduotis teikia verslo įmonių atstovai, taip moksleiviai susipažįsta su aktualiausiomis inžinerinėmis problemomis, pritaiko mokykloje įgytas žinias bei jas pagilina. O varžybose nugalėjusi komanda svečio teisėmis dalyvauja studentų inžinerinėse varžybose EBEC. JuniorBEC varžybomis moksleiviai skatinami pasirinkti inžinerinės pakraipos studijas, o mes tvirtai tikime, kad jie priims įmonių mestą iššūkį.
+                </p>
+                <p>2014 metais moksleiviai pagal pateiktą miško planą turėjo suprojektuoti trasą. Renginio dieną savo užduočių sprendimus pateikė moksleivių komandos iš Kauno „Varpo“, „Saulės“ gimnazijų, Kauno Rokų vidurinės mokyklos, Panevėžio raj. Smilgių vidurinės mokyklos ir Šalčininkų Lietuvos tūkstantmečio gimnazijos. 1-ąją vietą užėmė „SPK“ (Specialiųjų poreikių komanda) iš Kauno „Saulės“ gimnazijos, 2-ąją – komanda „AMPERIS“ iš Kauno r. Raudondvario gimnazijos, 3-ąją – komanda „Atėjau, pamačiau, nugalėjau“ iš Kauno Rokų vidurinės mokyklos. Varžybų akimirkos <a href="https://www.facebook.com/pg/EbecKaunas/photos/?tab=album&album_id=263614543803645">čia</a>.
+                </p>
+                <p>
+                    2015 m. moksleiviams buvo pateikta užduotis ,,Ateities pamoka 20XXm.”, kuria buvo prašoma moksleivių įsivaizduoti bei viešai pristatyti kaip mokymosi procesas gali kisti ateityje. Dalyvavusios komandos pristatė tiek mini klasės maketus, tiek 3D grafikos modelius. Laimėtojais tapo Kauno „Varpo“ gimnazijos vienuoliktokų komanda „Elektrikai“, 2-ąją vietą užėmė Vilniaus Licėjaus gimnazijos devintokai „Hero team“, 3-iąją – taip pat Vilniaus Licėjaus gimnazijos vienuoliktokų komanda „Fotelis team“. Varžybų akimirkos <a href="https://www.facebook.com/pg/best.kaunas/photos/?tab=album&album_id=10152847356994652">čia</a>.
+                </p>
+                <p>
+                    2016 metais dalyviai atliko laipiojimo centro paskirtą užduotį - sugalvoti sprendimo būdą, kaip ir iš kokių medžiagų galima padaryti uolos reljefą imituojančią laipiojimo formą ir pagaminti didelę formą arba keletą mažesnių.  Komandos nenusileido viena kitai kūrybiškų sprendimų įvairove. Laipiojimo formoms naudota derva, smėlis, molis, miltai, druska, popierius, cementas, polistirolas, netgi tikri kaulai. 1-oji vieta atiteko KTU gimnazijos dešimtokų komandai „Evil Geniuses For a Better Tomorrow“, 2-oji - Panevėžio Juozo Balčikonio gimnazijos vienuoliktokams „Fizi5“, o 3-oji jauniausioms varžybų dalyvėms - Josvainių gimnazijos aštuntokių komandai „Eureka“. Varžybų akimirkos <a href="https://www.facebook.com/pg/best.kaunas/photos/?tab=album&album_id=10153624817454652">čia</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsor">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Rėmėjai</h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a target="_blank" href="http://www.mars.com/lithuania/lt/index.aspx"><img class="img-responsive sponsor" src="images/sponsor/sponsor1-k.png" alt=""></a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a target="_blank" href="http://www.fima.lt/"><img class="img-responsive sponsor" src="images/sponsor/Fima.png" alt=""></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#sponsor-->
+
+    <section id="register">
+        <div class="contact-section">
+          <div class="ear-piece">
+          <img class="img-responsive" src="images/ear-piece.png" alt="">
+          </div>
+            <div class="container">
+                <h2>Registracija</h2>
+
+                <div id="register-rules" class="row" >
+
+                  <div class="col-sm-offset-4 col-sm-8">
+                    <h2>Taisyklės</h2>
+                      <ol>
+                        <li>
+                          Dalyvavimas patvirtinamas įkėlus reprezentatyvius CV* bei sumokant 20eu/komandai (5eu/dalyviui) depozitą (dėl depozitų perdavimo Studentų miestelyje kreiptis tel.: 862360723 (Emilija) dėl depozitų perdavimo centre kreiptis: 868662414 (Urtė)).
+
+                        </li>
+                        <li>
+                          Depozitas bus grąžintas, jei komanda dalyvaus varžybose ir užpildys atgalinio ryšio (angl. feedback) formą.**
+                        </li>
+                        <li>
+                          Esant nenumatytiems/kritiniams atvejams ir negalint dalyvauti varžybose kreiptis pirmame punkte nurodytais kontaktais.
+                        </li>
+                        <li>
+                          Registruojantis jūs patvirtinate, kad visi komandos nariai dalyvaus inžinerinėse varžybose bei sutinkate, jog Jūsų CV būtų perduoti įmonių atstovams.
+
+                        </li>
+                        <li>
+                          Tik KTU (Kauno technologijos universiteto) studentai gali dalyvauti EBEC inžinerinėse varžybose.
+                        </li>
+
+                      </ol>
+                      <p>
+                        * CV turi būti būti tvarkingas. CV siūlome kurti naudojant
+                        <a href="http://europass.lt/dokumentai/europass-cv" target=_blank>Europass šabloną</a>
+                         (pavyzdžius galite rasti  <a href="http://europass.cedefop.europa.eu/documents/curriculum-vitae/examples" target=_blank>čia</a>).
+
+                      </p>
+                      <h2>Rules</h2>
+                        <ol>
+                          <li>
+                            Participation to event is confirmed only after uploading a representative CV and paying a deposit of 5 €
+                            which is returned after the competition. (to give the deposit contact BEST Kaunas members:
+                            in Student campus contact 862360723 (Emilija) in city centre contact 868662414 (Urtė))
+                          </li>
+                          <li>
+                            Deposit will be returned if you will participate in competitions and fill feedback form.**
+                          </li>
+                          <li>
+                          	With your registration you confirm that you will participate in the competition and agree that your CV can be transfered to company representatives.</li>
+                          <li>
+                            If you have some emergency or unplanned situations and you are not able to participate in the competition, contact people above.
+                          </li>
+                          <li>
+                          Only KTU (Kaunas University of Technology) students can participate in EBEC engineering Competition
+                          </li>
+
+                        </ol>
+                        <p>
+                          * CV must be neat. We recoment to create a CV using the
+              <a href="https://europass.cedefop.europa.eu/" target=_blank>Europass template</a>
+                           (examples can be found here). Europass template (examples can be found <a href="http://europass.cedefop.europa.eu/documents/curriculum-vitae/examples" target=_blank>here</a>). You can also export CV from your current Linkedin profile, if there you comprehensively filled out all the information.
+
+                        </p>
+                  </div>
+
+                </div>
+
+
+                <!-- Vytenis added registration START -->
+                <div id="registration">
+                    <form id="registrationForm" action="#">
+                        <div class="list-align">
+                            <div>
+                                <input type="radio" id="teamDesign" name="teamType" value="teamDesign">
+                                <label class="registrationTeam" id="designTeam" for="teamDesign" >
+                                    <img alt="Komanda" src="images/registration/group.png"/>
+                                    <h3 >Team design</h3>
+                                </label>
+                            </div>
+                            <div>
+                            <input type="radio" id="caseStudy" name="teamType" value="caseStudy">
+                            <label for="caseStudy" id="caseStudyTeam" class="registrationTeam">
+                                <img alt="Komanda" src="images/registration/group.png"/>
+                                <h3 >Case study</h3>
+                            </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="caseStudyAlone" name="teamType" value="caseStudyAlone">
+                                <label id="caseStudySingle" class="registrationTeam" for="caseStudyAlone">
+                                    <img alt="Komanda" src="images/registration/one_person.png"/>
+                                    <h3>Case study</h3>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="teamNameDiv" ><input placeholder="Komandos pavadinimas" id="teamName" name="teamName"></div>
+                        <div class="list-align" id="registrationFormList"></div>
+                        <input type="submit" class="push_button blue" id="registrationSubmit" value="Registruotis" />
+                    </form>
+                </div>
+                <div class="form-style entry" id="applicantID_C">
+                    <input type="text" id="applicantID_C_name" name="applicantID_C_name" placeholder="Vardas Pavardė" >
+                    <label for="applicantID_C_bird" name="applicantID_C_bird">Gimimo data:
+                        <input type="date" id="applicantID_C_bird" name="applicantID_C_bird" placeholder="Gimimo data" >
+                    </label>
+                    <label for="applicantID_C_food" class="checkbox" >Vegetaras:<input id="applicantID_C_food" name="applicantID_C__food" type="checkbox"></label>
+                        <input id="applicantID_C_email" name="applicantID_C__email" type="email" placeholder="El. Paštas" >
+                    <label for="applicantID_C_phone">Telefonas: +370 <input type="number" id="applicantID_C_phone" name="applicantID_C_phone" min="0" max="99999999" ></label>
+                        <input type="text" placeholder="Fakultetas" id="applicantID_C_faculty" name="applicantID_C_faculty" >
+                    <input type="text" placeholder="Studijų pakopa" id="applicantID_C_study_cycle" name="applicantID_C_study_cycle" >
+                    <input type="text" placeholder="Kursas" id="applicantID_C_course" name="applicantID_C_course" >
+                    <input type="text" placeholder="Akademinė grupė" id="applicantID_C_academic_group" name="applicantID_C_academic_group" >
+                    <label for="applicantID_C_cv">Pridėti CV</label><input id="applicantID_C_cv" name="applicantID_C_cv" type="file">
+                </div>
+                <!-- Vytenis added registration END -->
+            </div>
+        </div>
+    </section>
+    <!--TODO: suvienodint nuotraukų dydžius-->
+    <section id="contacts-best">
+        <div class="container">
+            <div class="row">
+                    <h2 class="heading">Renginio organizatoriai</h2>
+                        <!--<div class="item active">-->
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="single-event">
+                                        <div class="img-holder">
+                                            <img class="img-responsive" src="images/event/viktorija.jpg" alt="event-image">
+                                        </div>
+                                        <h4>Organizacijos prezidentė</h4>
+                                        <h5>Viktorija Lekavičiutė</h5>
+                                        <h5>viktorija.lekaviciute@best.eu.org</h5>
+                                        <h5>+37065547095</h5>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="single-event">
+                                        <div class="img-holder">
+                                            <img class="img-responsive" src="images/event/toma.jpg" alt="event-image">
+                                        </div>
+                                        <h4>Renginio kuratorė</h4>
+                                        <h5>Toma Bakanauskaitė</h5>
+                                        <h5>ebeckaunas@gmail.com</h5>
+                                        <h5>+37063850758</h5>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="single-event">
+                                        <div class="img-holder">
+                                            <img class="img-responsive" src="images/event/rimas.jpg" alt="event-image">
+
+                                        </div><h4>Atstovas įmonėms</h4>
+                                        <h5>Rimas Jonušauskas</h5>
+                                        <h5>rimas.jonusauskas@best.eu.org</h5>
+                                        <h5>+37063752686</h5>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="single-event">
+                                        <div class="img-holder">
+                                            <img class="img-responsive" src="images/event/urte.jpg" alt="event-image">
+                                        </div>
+                                        <h4>Atstovė dalyviams</h4>
+                                        <h5>Urtė Navickaitė</h5>
+                                        <h5>naurt11@gmail.com</h5>
+                                        <h5>+37068662414</h5>
+                                    </div>
+                                </div>
+                            <!--</div>-->
+
+                    </div>
+
+                <!--<div class="guitar">-->
+                <!--<img class="img-responsive" src="images/guitar.png" alt="guitar">-->
+                <!--</div>-->
+            </div>
+        </div>
+    </section><!--/#event-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                <p><img src="images/best_kaunas.png" alt="logo">
+                    &copy;2017 bestkaunas.org </p>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+    <script type="text/javascript" src="js/libraries/jquery.js"></script>
+    <script type="text/javascript" src="js/libraries/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="js/gmaps.js"></script>-->
+    <script type="text/javascript" src="js/libraries/vue.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <script type="text/javascript" src="js/libraries/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/coundown-timer.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="js/libraries/jquery.nav.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+<!--    <script type="text/javascript" src="js/app.js"></script>-->
+    <script type="text/javascript" src="js/registration.js"></script>
+</div>
+</body>
+</html>
