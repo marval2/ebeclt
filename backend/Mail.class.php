@@ -87,13 +87,12 @@ class Mail
 EOT;
 
     function  send($to, $from){
-
         $subject = 'Registracija į EBEC';
 
         $headers = "From: " . strip_tags($from) . "\r\n";
         $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8";
         mail($to, $subject, $this->html, $headers);
     }
 
