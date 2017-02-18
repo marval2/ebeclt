@@ -37,7 +37,7 @@ class Validator
     }
 
     function isValidDate($date, $format= 'Y-m-d'){
-        return $date == date($format, strtotime($date));
+        return true ;//$date == date($format, strtotime($date));
     }
 
     function isGoodFileFormat($fileName){
