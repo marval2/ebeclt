@@ -38,7 +38,7 @@
     try{
         $applicantsNumber = 0;
         if ($_SERVER['CONTENT_LENGTH'] > 8380000) {
-            throw new Exception("Per dideli priedai");
+            throw new Exception("Per dideli priedai/ To big file");
         }
         if(!empty($_POST["teamType"])){
             if($_POST["teamType"] == "caseStudyAlone"){
@@ -47,14 +47,14 @@
                 $applicantsNumber = 4;
                 if(!empty($_POST["teamName"])){
                     if($db->isTeamInDB($_POST["teamName"])){
-                        throw new Exception("Jau tokia komanda įregistruota");
+                        throw new Exception("Jau tokia komanda įregistruota/");
                     }
                 }else{
-                    throw new Exception("Įrašykite komandos pavadinimą");
+                    throw new Exception("Įrašykite komandos pavadinimą/Team name is missing");
                 }
             }
         }else{
-            throw new Exception('Pasirinkite komandą');
+            throw new Exception('Pasirinkite komandą/Chose team type');
         }
 
         for ($i = 0; $i< $applicantsNumber; $i++) {
@@ -63,10 +63,10 @@
                 if($valid->isName($name)){
                     $fields[$i]["full_name"] = $name;
                 }else {
-                    throw new Exception('Blogai aprašytas vardas');
+                    throw new Exception('Blogai aprašytas vardas/Name is not valid');
                 }
             }else{
-                throw new Exception('Įrašykite savo vardą');
+                throw new Exception('Įrašykite savo vardą/Name is missing');
             }
 
             if (!empty($_POST["applicant" . $i . "_bird"])) {
@@ -74,10 +74,10 @@
                 if($valid->isValidDate($date)){
                     $fields[$i]["birthday"] = $date;
                 }else {
-                    throw new Exception('Blogai nurodyta gimimo data');
+                    throw new Exception('Blogai nurodyta gimimo data/Date is incorrect');
                 }
             }else{
-                throw new Exception('Įrašykite datą');
+                throw new Exception('Įrašykite datą/Chose birthday date');
             }
 
             $fields[$i]["vegetarian"] = isset($_POST["applicant" . $i . "__food"])? 1 : 0;
@@ -87,14 +87,14 @@
                 if($valid->isEmail($email[$i])){
                     $fields[$i]["email"] = $email[$i];
                 }else{
-                    throw new Exception('Blogai nurodytas el. paštas');
+                    throw new Exception('Blogai nurodytas el. paštas/Email is incorrect');
                 }
             }else{
-                throw new Exception('Nurodykite el. pašto adresą');
+                throw new Exception('Nurodykite el. pašto adresą/Write an email');
             }
 
             if($db->isEmailInDB($email[$i])){
-                throw new Exception('Su tuo pačiu el. paštu jau yra registruotas asmuo');
+                throw new Exception('Su tuo pačiu el. paštu jau yra registruotas asmuo/Person is already registered with this e-mail');
             }
 
             if (!empty($_POST["applicant" . $i . "_phone"])) {
@@ -102,53 +102,53 @@
                 if($valid->isPhoneNumber($phone)){
                     $fields[$i]["phone_number"] = $phone;
                 }else{
-                    throw new Exception('Blogai nurodytas telefono numeris');
+                    throw new Exception('Blogai nurodytas telefono numeris/Phone number is incorrect');
                 }
             }else{
-                throw new Exception('Nurodykite telefono numerį');
+                throw new Exception('Nurodykite telefono numerį/Write phone number');
             }
 
             if (!empty($_POST["applicant" . $i . "_faculty"])  ) {
                 $faculty = $_POST["applicant" . $i . "_faculty"];
                 $fields[$i]["faculty"] = $_POST["applicant" . $i . "_faculty"];
             }else{
-                throw new Exception('Nurodykite savo fakultetą');
+                throw new Exception('Nurodykite savo fakultetą/Write study department');
             }
             if (!empty($_POST["applicant" . $i . "_study_cycle"])) {
                 $fields[$i]["study_cycle"] = $_POST["applicant" . $i . "_study_cycle"];
             }else{
-                throw new Exception('Nurodykite studijų pakopą');
+                throw new Exception('Nurodykite studijų pakopą/Write grade of education');
             }
             if (!empty($_POST["applicant" . $i . "_course"])) {
                 $fields[$i]["course"] = $_POST["applicant" . $i . "_course"];
             }else{
-                throw new Exception('Nurodykite studijų kursą');
+                throw new Exception('Nurodykite studijų kursą/Study year');
             }
             if (!empty($_POST["applicant" . $i . "_academic_group"])) {
                 $fields[$i]["academic_group"] = $_POST["applicant" . $i . "_academic_group"];
             }else{
-                throw new Exception('Nurodykite akademinę grupę');
+                throw new Exception('Nurodykite akademinę grupę/Academic group');
             }
             if(isset($_FILES["applicant". $i ."_cv"])){
                 if ($_FILES["applicant". $i ."_cv"]['error']!=0){
-                    throw new Exception('Blogas failas. Įkelkite kitą');
+                    throw new Exception('Blogas failas. Įkelkite kitą/Incorrect file type. Available is pdf, doc, docx or otd');
                 }else{
                     $cv[$i] = $_FILES["applicant". $i ."_cv"];
                 }
                 if(!$valid->isGoodFileFormat($cv[$i])){
-                    throw new Exception('Blogas failo formatas');
+                    throw new Exception('Blogas failo formatas arba neįkeltas failas/Incorrect cv file type. Available types is pdf, doc, docx or otd');
                 }
                 if (!$valid->isFileNotToBig($cv[$i])){
-                    throw new Exception('Failas per didelis (įkelkite mažesnį nei 1MB)');
+                    throw new Exception('Failas per didelis (įkelkite mažesnį nei 1MB)/CV file is too big');
                 }
             }else{
-                throw new Exception('Pridėkite failą');
+                throw new Exception('Pridėkite failą/Add cv file');
             }
         }
         if($applicantsNumber == 4){
             $dubEmail = array($fields[0]["email"],$fields[1]["email"],$fields[2]["email"],$fields[3]["email"]);
             if(!empty(array_dup($dubEmail))){
-                throw new Exception('Kartojasi el. paštas');
+                throw new Exception('Kartojasi el. paštas/Duplicate e-mails');
             }
         }
     }catch (Exception $e){

@@ -39,11 +39,8 @@ function renderApplicantList($data)
             case "caseStudy" :
                 $teamType = "Case study";
                 break;
-            case "caseStudyAlone" :
-                $teamType = "Case study (Vienas)";
-                break;
             default :
-                $teamType = "Sistemoje klaida";
+                $teamType = "Case study (Vienas)";
         }
 
         // $table->trAttr($i, "id=".)
