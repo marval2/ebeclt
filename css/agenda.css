@@ -1,0 +1,31 @@
+#agenda{
+    background-color: #4ab4a2;
+}
+
+#agenda table{
+    width: 100%;
+    margin: 20px 0 30px 0;
+    text-align: justify;
+}
+
+#agenda tbody{
+    background-color: #39a391;
+}
+
+#agenda table th{
+    width: 40%;
+}
+
+#agenda table th:first-child{
+    width: 12%;
+}
+
+#agenda th{
+    color: #000000;
+    text-align: center;
+}
+
+#agenda td{
+    padding: 2px 0 2px 20px;
+
+}
